@@ -1,0 +1,89 @@
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f4f4f4;
+  text-align:center;
+}
+
+nav{
+  background:#111;
+  color:#fff;
+  padding:15px;
+  display:flex;
+  justify-content:center; /* يجعل المحتوى في المنتصف */
+  align-items:center;
+  position:relative;
+}
+
+header{
+  padding:60px;
+  background:white;
+}
+
+.services{
+  padding:40px;
+}
+
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  width:150px;
+  box-shadow:0 5px 10px rgba(0,0,0,.1);
+}
+
+button{
+  padding:8px 15px;
+  border:none;
+  background:#00b894;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+}
+button:hover{
+  background:#00a383;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+footer{
+  background:#111;
+  color:white;
+  padding:20px;
+}
+
+.contact-menu{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown{
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.12);
+  overflow: hidden;
+  min-width: 160px;
+  display: none;
+  z-index: 999;
+}
+
+.dropdown a{
+  display: block;
+  padding: 12px 14px;
+  text-decoration: none;
+  color: #111;
+  text-align: right;
+}
+
+.dropdown a:hover{
+  background: #f2f2f2;
+}
