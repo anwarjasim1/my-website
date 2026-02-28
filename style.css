@@ -226,3 +226,44 @@ button{
   flex-direction: column;
   justify-content: center;
 }
+
+/* ===== Mobile Fix ===== */
+@media (max-width: 768px){
+  .nav{
+    padding: 10px 12px;
+  }
+
+  .nav-links{
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a{
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .hero{
+    padding: 50px 14px;
+  }
+
+  .hero h1{
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .hero p{
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .btn{
+    width: 100%;
+    text-align: center;
+  }
+
+  .cards, .work-grid{
+    grid-template-columns: 1fr !important;
+  }
+}
