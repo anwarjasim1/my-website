@@ -1,89 +1,228 @@
+:root{
+  --bg:#0b1220;
+  --panel:rgba(255,255,255,.06);
+  --card:rgba(255,255,255,.08);
+  --stroke:rgba(255,255,255,.12);
+  --text:#eaf0ff;
+  --muted:rgba(234,240,255,.72);
+  --primary:#6d5efc;
+  --secondary:#22c55e;
+  --accent:#38bdf8;
+  --shadow:0 18px 55px rgba(0,0,0,.35);
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Arial;
-  background:#f4f4f4;
-  text-align:center;
+  font-family:"Cairo",sans-serif;
+  color:var(--text);
+  background:var(--bg);
 }
 
-nav{
-  background:#111;
-  color:#fff;
-  padding:15px;
+/* ===== NAV (حديث ومرتب) ===== */
+.nav{
   display:flex;
-  justify-content:center; /* يجعل المحتوى في المنتصف */
   align-items:center;
-  position:relative;
+  justify-content:center;
+  padding:12px 18px;
+  background: rgba(11,18,32,.85);
+  backdrop-filter: blur(10px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-header{
-  padding:60px;
-  background:white;
+.brand{
+  color: var(--text);
+  text-decoration:none;
+  font-weight:800;
+  font-size:18px;
 }
 
-.services{
-  padding:40px;
+/* روابط الوسط */
+.nav-links{
+  display:flex;
+  gap:10px;
+}
+
+.nav-links a{
+  color: var(--text);
+  text-decoration:none;        /* يشيل التسطير */
+  font-size:14px;
+  padding:8px 12px;
+  border-radius:999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  transition:.2s ease;
+}
+
+.nav-links a:hover{
+  background: rgba(255,255,255,.12);
+  transform: translateY(-1px);
+}
+
+/* زر التواصل يسار */
+.contact-menu{
+  position:relative; /* مهم حتى القائمة تطلع بمكانها */
+}
+
+#contactBtn{
+  padding:9px 14px;
+  border:0;
+  border-radius:999px;
+  background: linear-gradient(135deg, var(--accent), var(--primary));
+  color:#0b1220;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* القائمة المنسدلة */
+.dropdown{
+  position:absolute;
+  top:48px;
+  left:0;
+  width:200px;
+  display:none;
+  padding:8px;
+  border-radius:14px;
+  background: rgba(12,18,34,.95);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 18px 55px rgba(0,0,0,.35);
+}
+
+.dropdown a{
+  display:block;
+  padding:10px 12px;
+  border-radius:12px;
+  color: var(--text);
+  text-decoration:none;
+}
+
+.dropdown a:hover{
+  background: rgba(255,255,255,.08);
+}
+
+/* موبايل */
+@media (max-width:860px){
+  .nav-links{ display:none; }  /* نخفي الروابط بالموبايل (نضيف منيو لاحقاً) */
+}
+
+.brand{
+  position:absolute;
+  right:20px;
+  font-weight:700;
+}
+
+.contact-menu{ position:absolute; left:20px; }
+
+button{
+  padding:10px 15px;
+  border:0;
+  border-radius:8px;
+  background:#22c55e;
+  color:white;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:80px 20px;
+}
+
+.btn{
+  padding:12px 20px;
+  background:#6d5efc;
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+/* SECTIONS */
+.section{
+  padding:40px 20px;
+  text-align:center;
 }
 
 .cards{
   display:flex;
+  gap:15px;
   justify-content:center;
-  gap:20px;
 }
 
 .card{
-  background:white;
   padding:20px;
-  border-radius:10px;
-  width:150px;
-  box-shadow:0 5px 10px rgba(0,0,0,.1);
+  background:#111827;
+  border-radius:12px;
 }
 
-button{
-  padding:8px 15px;
-  border:none;
-  background:#00b894;
-  color:white;
-  border-radius:5px;
-  cursor:pointer;
-}
-button:hover{
-  background:#00a383;
-  transform: translateY(-4px) scale(1.05);
-  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+.work-grid{
+  display:flex;
+  gap:15px;
+  justify-content:center;
 }
 
-footer{
-  background:#111;
-  color:white;
+.work-item{
+  padding:20px;
+  background:#111827;
+  border-radius:12px;
+}
+
+.footer{
+  text-align:center;
   padding:20px;
 }
 
-.contact-menu{
-  position: relative;
-  display: inline-block;
+/* ===== Button Hover Clean Animation ===== */
+
+/* زر التواصل */
+#contactBtn{
+  transition: all .25s ease;
 }
 
-.dropdown{
-  position: absolute;
-  top: 45px;
-  right: 0;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,.12);
-  overflow: hidden;
-  min-width: 160px;
-  display: none;
-  z-index: 999;
+#contactBtn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(56,189,248,.35);
 }
 
-.dropdown a{
-  display: block;
-  padding: 12px 14px;
-  text-decoration: none;
-  color: #111;
-  text-align: right;
+/* أزرار الهيرو */
+.btn{
+  display:inline-block;
+  border-radius:12px;
+  transition: all .25s ease;
 }
 
-.dropdown a:hover{
-  background: #f2f2f2;
+/* Hover نظيف */
+.btn:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(109,94,252,.35);
+  filter: brightness(1.08);
+}
+
+/* عند الضغط */
+.btn:active,
+#contactBtn:active{
+  transform: scale(.95);
+}
+
+/* تمييز الباقة الاحترافية */
+.card:nth-child(2){
+  border: 2px solid var(--primary);
+  transform: scale(1.05);
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
