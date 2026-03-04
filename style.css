@@ -334,3 +334,21 @@ nav{
 .nav-btn:hover{
   background:rgba(255,255,255,0.1);
 }
+
+.work-item{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  width: 250px;
+  height: 200px;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.work-item p{
+  width: 120px;
+  margin: auto;
+  line-height: 1.6;
+}
