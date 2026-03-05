@@ -18,6 +18,7 @@ body{
   font-family:"Cairo",sans-serif;
   color:var(--text);
   background:var(--bg);
+  width: 100%;
 }
 
 /* ===== NAV (حديث ومرتب) ===== */
@@ -227,7 +228,7 @@ button{
   justify-content: center;
 }
 
-/* ===== Mobile Fix ===== */
+/* ===== Mobile Fix (Fixed) ===== */
 @media (max-width: 768px){
   .nav{
     padding: 10px 12px;
@@ -258,8 +259,6 @@ button{
     line-height: 1.8;
   }
 
- @media (max-width: 768px){
-
   /* نخلي مجموعة أزرار الهيرو والتواصل مرتبة */
   .hero-actions,
   .contact-actions{
@@ -269,12 +268,11 @@ button{
     align-items: center;
   }
 
-  /* الأزرار ما تكون 100%، تكون بنسبة جميلة */
+  /* الأزرار بنسبة جميلة */
   .btn{
     width: min(320px, 92%);
     text-align:center;
   }
-}
 
   .cards, .work-grid{
     grid-template-columns: 1fr !important;
@@ -351,4 +349,19 @@ nav{
   width: 120px;
   margin: auto;
   line-height: 1.6;
+}
+
+/* ===== Responsive Work Grid (Override) ===== */
+.work-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  justify-items: stretch;
+}
+
+.work-item{
+  width: 100% !important;
+  height: auto !important;
+  padding: 0 !important;
+  overflow: hidden;
 }
