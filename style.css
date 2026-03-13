@@ -359,6 +359,23 @@ nav{
   justify-items: stretch;
 }
 
+.work-note{
+  text-align: center;
+  color: #9fb3d9;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.work-item{
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.work-item:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
 .work-item{
   width: 100% !important;
   height: auto !important;
